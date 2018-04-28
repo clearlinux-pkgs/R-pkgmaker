@@ -4,7 +4,7 @@
 #
 Name     : R-pkgmaker
 Version  : 0.22
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/pkgmaker_0.22.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgmaker_0.22.tar.gz
 Summary  : Package development utilities
