@@ -4,18 +4,12 @@
 #
 Name     : R-pkgmaker
 Version  : 0.27
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/pkgmaker_0.27.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgmaker_0.27.tar.gz
 Summary  : Development Utilities for R Packages
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-bibtex
-Requires: R-cli
-Requires: R-devtools
-Requires: R-registry
-Requires: R-withr
-Requires: R-xtable
 BuildRequires : R-bibtex
 BuildRequires : R-cli
 BuildRequires : R-devtools
@@ -41,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552871013
+export SOURCE_DATE_EPOCH=1552875322
 
 %install
-export SOURCE_DATE_EPOCH=1552871013
+export SOURCE_DATE_EPOCH=1552875322
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
