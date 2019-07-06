@@ -4,16 +4,28 @@
 #
 Name     : R-pkgmaker
 Version  : 0.27
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/pkgmaker_0.27.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgmaker_0.27.tar.gz
 Summary  : Development Utilities for R Packages
 Group    : Development/Tools
 License  : GPL-2.0+
+Requires: R-bibtex
+Requires: R-digest
+Requires: R-magrittr
+Requires: R-registry
+Requires: R-stringi
+Requires: R-stringr
+Requires: R-withr
+Requires: R-xtable
 BuildRequires : R-bibtex
 BuildRequires : R-cli
 BuildRequires : R-devtools
+BuildRequires : R-digest
+BuildRequires : R-magrittr
 BuildRequires : R-registry
+BuildRequires : R-stringi
+BuildRequires : R-stringr
 BuildRequires : R-withr
 BuildRequires : R-xtable
 BuildRequires : buildreq-R
@@ -34,13 +46,13 @@ development. It currently provides managers for multiple package specific
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552881246
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562443176
 
 %install
-export SOURCE_DATE_EPOCH=1552881246
+export SOURCE_DATE_EPOCH=1562443176
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,12 +81,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  pkgmaker || :
+R CMD check --no-manual --no-examples --no-codoc pkgmaker || :
 
 
 %files
