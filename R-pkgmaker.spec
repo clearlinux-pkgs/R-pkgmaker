@@ -4,7 +4,7 @@
 #
 Name     : R-pkgmaker
 Version  : 0.31.1
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/pkgmaker_0.31.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgmaker_0.31.1.tar.gz
 Summary  : Development Utilities for R Packages
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-assertthat
 Requires: R-bibtex
-Requires: R-devtools
 Requires: R-digest
 Requires: R-magrittr
 Requires: R-registry
@@ -22,7 +21,6 @@ Requires: R-withr
 Requires: R-xtable
 BuildRequires : R-assertthat
 BuildRequires : R-bibtex
-BuildRequires : R-devtools
 BuildRequires : R-digest
 BuildRequires : R-magrittr
 BuildRequires : R-registry
@@ -43,21 +41,22 @@ development. It currently provides managers for multiple package specific
 
 %prep
 %setup -q -c -n pkgmaker
+cd %{_builddir}/pkgmaker
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1584636666
+export SOURCE_DATE_EPOCH=1589781840
 
 %install
-export SOURCE_DATE_EPOCH=1584636666
+export SOURCE_DATE_EPOCH=1589781840
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
