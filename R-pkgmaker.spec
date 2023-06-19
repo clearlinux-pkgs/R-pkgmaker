@@ -5,7 +5,7 @@
 #
 Name     : R-pkgmaker
 Version  : 0.32.10
-Release  : 53
+Release  : 54
 URL      : https://cran.r-project.org/src/contrib/pkgmaker_0.32.10.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgmaker_0.32.10.tar.gz
 Summary  : Development Utilities for R Packages
